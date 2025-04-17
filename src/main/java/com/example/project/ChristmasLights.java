@@ -11,9 +11,20 @@
 package com.example.project;
 
 public class ChristmasLights {
-
-	public int LightsOn(int a, int b) {
-		return a + b;
+private int rows = 1000;
+private int columns = 1000;
+private boolean[][] lights = new boolean[rows][columns];
+private int totalLights = 0;
+	public int TurnOnAllLights(int rows, int columns) {
+		for (int i = 0; i < rows; i++) {
+			for (int j = 0; j < columns; j++) {
+				if (lights[i][j] == false) {
+					lights[i][j] = true;
+					totalLights++;
+				}
+			}
+		}
+		return totalLights;
 	}
 
 }

@@ -21,9 +21,9 @@ class ChristmasLightsTest {
 
 	@Test
 	@DisplayName("all lights on")
-	void TurnOnAllLights() {
+	void TestTurnOnAllLights() {
 		ChristmasLights christmasLights = new ChristmasLights();
-		assertEquals(1000000, ChristmasLights.LightsOn([0,0], [1000,1000]), "all lights on");
+		assertEquals(1000000, christmasLights.TurnOnAllLights(0, 1000), "all lights on");
 	}
 
 }
