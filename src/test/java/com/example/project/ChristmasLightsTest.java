@@ -17,25 +17,13 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-class CalculatorTests {
+class ChristmasLightsTest {
 
 	@Test
-	@DisplayName("1 + 1 = 2")
-	void addsTwoNumbers() {
-		Calculator calculator = new Calculator();
-		assertEquals(2, calculator.add(1, 1), "1 + 1 should equal 2");
+	@DisplayName("all lights on")
+	void TurnOnAllLights() {
+		ChristmasLights christmasLights = new ChristmasLights();
+		assertEquals(1000000, ChristmasLights.LightsOn([0,0], [1000,1000]), "all lights on");
 	}
 
-	@ParameterizedTest(name = "{0} + {1} = {2}")
-	@CsvSource({
-			"0,    1,   1",
-			"1,    2,   3",
-			"49,  51, 100",
-			"1,  100, 101"
-	})
-	void add(int first, int second, int expectedResult) {
-		Calculator calculator = new Calculator();
-		assertEquals(expectedResult, calculator.add(first, second),
-				() -> first + " + " + second + " should equal " + expectedResult);
-	}
 }
