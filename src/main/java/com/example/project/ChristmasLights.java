@@ -15,7 +15,7 @@ private int rows = 1000;
 private int columns = 1000;
 private boolean[][] lights = new boolean[rows][columns];
 private int totalLights = 0;
-	public int TurnOnAllLights(int rows, int columns) {
+	public int TurnOnAllLights() {
 		if (totalLights < 1000000) {
 			totalLights = 1000000;
 		}
