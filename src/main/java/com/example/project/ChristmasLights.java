@@ -42,10 +42,10 @@ private int totalLights = 0;
 		return totalLights;
 	}
 	public int TurnonFirstHalfofLights(int startRow, int startColumn, int endRow, int endColumn) {
-		for (int i = startRow; i <= endRow; i++) {
-			for (int j = startColumn; j <= endColumn; j++) {
-				if (!lights[i][j]) {
-					lights[i][j] = true;
+		for (int rowCounter = startRow; rowCounter <= endRow; rowCounter++) {
+			for (int columnCounter = startColumn; columnCounter <= endColumn; columnCounter++) {
+				if (!lights[rowCounter][columnCounter]) {
+					lights[rowCounter][columnCounter] = true;
 					totalLights++;
 				}
 			}
