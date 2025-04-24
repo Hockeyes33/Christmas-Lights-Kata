@@ -31,4 +31,10 @@ class ChristmasLightsTest {
 		ChristmasLights christmasLights = new ChristmasLights();
 		assertEquals(1000, christmasLights.ToggleFirst1000Lights(0,0,999,0), "Toggle first 1000 lights");
 	}
+	@Test
+	@DisplayName("Toggle first half of lights")
+	void TestTurnonFirstHalfofLights() {
+		ChristmasLights christmasLights = new ChristmasLights();
+		assertEquals(0, christmasLights.TurnonFirstHalfofLights(0,0,499,999), "Toggle first half of lights again");
+	}
 }
