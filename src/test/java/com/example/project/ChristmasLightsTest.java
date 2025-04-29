@@ -11,6 +11,7 @@
 package com.example.project;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -37,4 +38,12 @@ class ChristmasLightsTest {
 		ChristmasLights christmasLights = new ChristmasLights();
 		assertEquals(500000, christmasLights.TurnonFirstHalfofLights(0,0,499,999), "Toggle first half of lights again");
 	}
+	@Test
+    public void TestOutOfArrayException() throws Exception {
+		ChristmasLights christmasLights = new ChristmasLights();
+        assertThrows(ChristmasLights.OutOfArrayExeption.class, 
+            () -> {christmasLights.TurnonFirstHalfofLights(0,0,1500,1200);},
+            "Turn on lights out of array bounds should throw exception" 
+            );
+    }
 }

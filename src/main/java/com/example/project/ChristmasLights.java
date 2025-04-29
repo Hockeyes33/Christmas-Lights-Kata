@@ -52,4 +52,5 @@ private int totalLights = 0;
 		}
 		return totalLights;
 	}
+
 }
