@@ -52,5 +52,23 @@ private int totalLights = 0;
 		}
 		return totalLights;
 	}
-
+	public int ToggleLights(int startRow, int startColumn, int endRow, int endColumn) throws OutOfArrayExeption {
+		if (startRow < 0 || startRow >= rows || endRow < 0 || endRow >= rows || startColumn < 0 || startColumn >= columns || endColumn < 0 || endColumn >= columns) {
+			throw new OutOfArrayExeption();
+		}
+		for (int rowCounter = startRow; rowCounter <= endRow; rowCounter++) {
+			for (int columnCounter = startColumn; columnCounter <= endColumn; columnCounter++) {
+				if (lights[rowCounter][columnCounter]) {
+					totalLights--;
+				} else {
+					totalLights++;
+				}
+				lights[rowCounter][columnCounter] = !lights[rowCounter][columnCounter];
+			}
+		}
+		return totalLights;
+	}
+	public class OutOfArrayExeption extends Exception {
+        
+    }
 }

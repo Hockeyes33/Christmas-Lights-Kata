@@ -42,7 +42,7 @@ class ChristmasLightsTest {
     public void TestOutOfArrayException() throws Exception {
 		ChristmasLights christmasLights = new ChristmasLights();
         assertThrows(ChristmasLights.OutOfArrayExeption.class, 
-            () -> {christmasLights.TurnonFirstHalfofLights(0,0,1500,1200);},
+            () -> {christmasLights.ToggleLights(0,0,1500,1200);},
             "Turn on lights out of array bounds should throw exception" 
             );
     }
